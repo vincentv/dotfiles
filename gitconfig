@@ -1,0 +1,12 @@
+[user]
+	name = Vincentv
+	email = xxx@gmail.com
+[github]
+	user = vincentv
+[core]
+	excludesfile = ~/.gitignore
+	editor = vim
+[color]
+    ui = true
+[alias]
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative

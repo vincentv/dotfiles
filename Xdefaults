@@ -1,0 +1,63 @@
+! Colors
+*background:black
+*foreground:White
+*color0:  #333333
+*color1:  #e5505f
+*color2:  #33ff33
+*color3:  #ffff33
+*color4:  #6666ff
+*color5:  #963c59
+*color6:  #338eaa
+*color7:  #ffffff
+*color8:  #666666
+*color9:  #ff9999
+*color10: #99ff99
+*color11: #ffff99
+*color12: #80a0ff
+*color13: #ff99ff
+*color14: #71bebe
+*color15: #ffffff
+!
+!-------------------------------------------------------------------------------
+! URxvt settings
+!-------------------------------------------------------------------------------
+
+! Prise en charge des onglets
+! shift+bas ou clic sur NEW= ouvrir nouvel onglet
+! shift + fleche gauche/droite=navigation dans les onglets.
+! ctrl + fleche gauche/droite= deplacement onglet
+! ctrl+d ou taper exit = fermer onglet/terminal
+!
+URxvt*termName: rxvt
+
+! General
+URxvt*loginShell:         true
+URxvt*scrollBar:         false
+URxvt*secondaryScroll:    true
+URxvt*saveLines:         65535
+URxvt*cursorBlink:       false
+URxvt*urgentOnBell:       true
+!URxvt*override-redirect:false
+!URxvt*borderLess:       false
+!URxvt*internalBorder:       0
+!URxvt*externalBorder:       0
+
+! Font
+URxvt*font: xft:inconsolata:size=10:antialias=true
+!URxvt*font: xft:inconsolata:size=10
+
+! Extensions
+URxvt*perl-ext-common: default,tabbed,matcher,searchable-scrollback
+URxvt*urlLauncher:      chrome
+URxvt*matcher.button:  1
+!  - catch ugly URLs
+
+! Appearance
+!  - cursor
+URxvt*cursorColor: #DCDCCC
+URxvt*foreground: #ffffff
+
+
+URxvt.depth: 32
+URxvt.background: rgba:0000/0000/0000/dddd
+
