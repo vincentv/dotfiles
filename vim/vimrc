@@ -2,7 +2,8 @@
 
 set nocompatible
 
-call pathogen#runtime_append_all_bundles()
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+call pathogen#infect()
 call pathogen#helptags()
 
 filetype indent plugin on
@@ -88,38 +89,37 @@ set guifont=Inconsolata
 "   %P percentage through buffer
 "   %) end of width specification
 set laststatus=2
-set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
-
-set statusline=
-set statusline+=\ [%n]                                  "buffernr
-set statusline+=\ %<%F\                                "File+path
-set statusline+=\ %y\                                  "FileType
+set statusline =\ [%n]
+set statusline+=\ %f
+set statusline+=\ %{&ff}\                              "FileFormat (dos/unix..)
+set statusline+=\ %m%r%y
 set statusline+=\ %{''.(&fenc!=''?&fenc:&enc).''}      "Encoding
 set statusline+=\ %{(&bomb?\",BOM\":\"\")}\            "Encoding2
-set statusline+=\ %{&ff}\                              "FileFormat (dos/unix..)
 set statusline+=\ %{&spelllang}\                       "Spellanguage
-set statusline+=\ %=\ row:%l/%L\ (%03p%%)\             "Rownumber/total (%)
-set statusline+=\ col:%03c\                            "Colnr
-set statusline+=\ \ %m%r%w\ %P\ \                      "Modified? Readonly? Top/bot
+set statusline+=\ %=\ %l:%02c\ (%03p%%)
 " }}}
 
 " Filetypes {{{
-au BufRead,BufNewFile nginx.*,nginx/**/*                                    set ft=nginx
-au BufRead,BufNewFile Gemfile,Capfile,Vagrantfile,Guardfile,*.thor          set ft=ruby
-au BufRead,BufNewFile Xdefaults                                             set ft=xdefaults
-au BufRead,BufNewFile *.{md,mkd,markdown}                                   set ft=markdown spell
-au BufRead,BufNewFile *.{txt}                                               set ft=txt      spell
-au BufRead,BufNewFile README,INSTALL,ChangeLog                              set ft=txt      spell
-au BufRead,BufNewFile *.sass                                                set ft=sass
-au BufRead,BufNewFile *.scss                                                set ft=scss
-au BufRead,BufNewFile *.mustache                                            set ft=mustache
-au BufRead,BufNewFile *.{handlebars,hbs}                                    set ft=handlebars
-au BufRead,BufNewFile *.{jst,ejs,tpl}                                       set ft=html
-au BufRead,BufNewFile *.coffee,Cakefile                                     set ft=coffee           ts=2 st=2 sw=2
-au BufRead,BufNewFile *.ics,*.ical                                          set ft=icalendar
-au BufRead,BufNewFile *.php                                                 set ft=php              ts=4 st=4 sw=4
-au BufRead,BufNewFile *.js                                                  set ft=javascript       ts=4 st=4 sw=4
-au BufRead,BufNewFile {*.ini.php,*.ini.php.dist}                            set ft=dosini
+
+set ft=ruby             ts=2 st=2 sw=2
+set ft=coffee           ts=2 st=2 sw=2
+
+au BufRead,BufNewFile nginx.*,nginx/**/*                                        set ft=nginx
+au BufRead,BufNewFile Gemfile,Capfile,Vagrantfile,Guardfile                     set ft=ruby             ts=2 st=2 sw=2
+au BufRead,BufNewFile *.{rb,thor,god}                                           set ft=ruby             ts=2 st=2 sw=2
+au BufRead,BufNewFile Xdefaults                                                 set ft=xdefaults
+au BufRead,BufNewFile *.{md,mkd,markdown}                                       set ft=markdown spell
+au BufRead,BufNewFile *.{txt}                                                   set ft=txt      spell
+au BufRead,BufNewFile README,INSTALL,ChangeLog                                  set ft=txt      spell
+au BufRead,BufNewFile *.sass                                                    set ft=sass
+au BufRead,BufNewFile *.scss                                                    set ft=scss
+au BufRead,BufNewFile *.mustache                                                set ft=mustache
+au BufRead,BufNewFile *.{handlebars,hbs}                                        set ft=handlebars
+au BufRead,BufNewFile *.{jst,ejs,tpl}                                           set ft=html
+au BufRead,BufNewFile *.coffee,Cakefile                                         set ft=coffee           ts=2 st=2 sw=2
+au BufRead,BufNewFile *.{ics,ical}                                              set ft=icalendar
+au BufRead,BufNewFile *.php                                                     set ft=php              ts=4 st=4 sw=4
+au BufRead,BufNewFile *.js                                                      set ft=javascript       ts=4 st=4 sw=4
 
 set omnifunc=syntaxcomplete#Complete
 " }}}
