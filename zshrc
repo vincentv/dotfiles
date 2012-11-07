@@ -30,6 +30,7 @@ plugins=(ssh-agent git rake rbenv ruby thor vagrant)
 source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 export PATH="$HOME/bin:$HOME/.rbenv/bin:$PATH"
+export EDITOR="vim"
 
 eval "$(rbenv init -)"
 
