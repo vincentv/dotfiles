@@ -101,9 +101,6 @@ set statusline+=\ %=\ %l:%02c\ (%03p%%)
 
 " Filetypes {{{
 
-set ft=ruby             ts=2 st=2 sw=2
-set ft=coffee           ts=2 st=2 sw=2
-
 au BufRead,BufNewFile nginx.*,nginx/**/*                                        set ft=nginx
 au BufRead,BufNewFile Gemfile,Capfile,Vagrantfile,Guardfile                     set ft=ruby             ts=2 st=2 sw=2
 au BufRead,BufNewFile *.{rb,thor,god}                                           set ft=ruby             ts=2 st=2 sw=2
@@ -168,12 +165,11 @@ function! Preserve(command)
 endfunction
 
 " Automatically give executable permissions if file begins with #! and contains '/bin/' in the path
-function MakeScriptExecuteable()
+function! MakeScriptExecuteable()
   if getline(1) =~ "^#!.*/bin/"
     silent !chmod +x <afile>
   endif
 endfunction
-
 " }}}
 
 " Supprime les espaces en fin de ligne avant de sauver
