@@ -1,3 +1,5 @@
+local awful = require("awful")
+
 ---------------------------
 -- Default awesome theme --
 ---------------------------
@@ -54,8 +56,8 @@ theme.menu_width  = "100"
 
 
 -- You can use your own command to set your wallpaper
-wallpaper = home .. "/.wallpapers"
-theme.wallpaper_cmd = { "awsetbg -R " .. wallpaper  }
+theme.wallpaper = home .. "/pictures/.wallpapers/"
+--theme.wallpaper_cmd = { "awsetbg -R " .. wallpaper  }
 
 -- You can use your own layout icons like this:
 theme.layout_tile =         theme.icons_dir .. "/layout.tile.png"
