@@ -1,4 +1,3 @@
---all
 --color
 --group
 --sort-files
@@ -10,3 +9,4 @@
 --ignore-dir=log
 --ignore-dir=tags
 --ignore-dir=tmp
+--ignore-dir=.bundle
